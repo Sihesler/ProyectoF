@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib import admin
-from django.utils import timezone
 
 # Create your models here.
 class Estudiante(models.Model):
@@ -16,13 +15,13 @@ class Estudiante(models.Model):
 #////////////
 class Curso(models.Model):
 
-    nombre      = models.CharField(max_length=60)
+    materia     = models.CharField(max_length=60)
     profesor    = models.CharField(max_length=60)
     hora        = models.CharField(max_length=20)
     estudiantes = models.ManyToManyField(Estudiante, through='Asignacion')
 
     def __str__(self):
-        return self.nombre
+        return self.materia
 
 #/////////
 class Asignacion (models.Model):

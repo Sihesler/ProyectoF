@@ -1,0 +1,16 @@
+{% load staticfiles i18n %}
+
+
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+    {{ formulario.as_p }}
+    <button type="submit"> Guardar </button>
+  </form>
+
+
+    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'index' %}"> Regresar </a>
+
+
+
+{% endblock %}
