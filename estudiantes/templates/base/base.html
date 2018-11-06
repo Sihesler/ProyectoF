@@ -1,83 +1,67 @@
-{% load staticfiles %}
+{% load staticfiles i18n %}
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8">
+<html lang="en">
 
-    {% block extrastatic %}
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Proyecto Cursos</title>
+
+    {% block css %}
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
     {% endblock %}
 
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-    <!--<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">-->
-    <title> {% block title %} Documento {% endblock %} </title>
-  </head>
-  <body>
+    <!-- Plugin CSS -->
+    <link href="{% static 'vendor/magnific-popup/magnific-popup.css' %}" rel="stylesheet" type="text/css">
 
-    <div class="container">
-      {% block navbar %}
-        <div class="bs-docs-section clearfix">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="bs-component">
-                <nav class="navbar navbar-default">
-                  <div class="container-fluid">
-                    <div class="navbar-header">
-                      <a class="navbar-brand" href="#"> Inicio </a>
-                    </div>
-                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Estudiantes
-                        <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#"> Crear </a></li>
-                          <li><a href="#"> Listar </a></li>
-                        </ul>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">aaaaa
-                        <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#"> Solicitar</a></li>
-                          <li><a href="#"> Listar </a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                      <li class="dropdown"><a href="#" onclick="pageTracker._link(this.href); return false;">
-                      ddddddd</a>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Opciones
-                      <span class="caret"></span></a>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Salir</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </nav>
-          </div>
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/freelancer.min.css' %}" rel="stylesheet">
+
+  </head>
+
+
+
+  <body id="page-top">
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+      <div class="container">
+          <!-- ////////////// -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'index' %}">inicio</a>
+          </li>
+        </ul>
+        <!-- ////////////// -->
+        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+
         </div>
       </div>
-    </div>
-    {% endblock %}
+    </nav>
 
+    <!-- Header -->
+    <header class="masthead bg-primary text-white text-center">
+      <div class="container">
+        {% block content %}
+        {% endblock %}
+      </div>
+    </header>
 
-    {% block content %}
-    <h4> Bloque de contenido </h4>
-    {% endblock %}
-
-    {% block footer %}
-    {% endblock %}
-
-  </div>
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <!--<script src="{% static 'js/bootstrap.min.css' %}"></script>-->
-    <script src="{% static 'js/bootstrap.min.css' %}"></script>
-
-    {% block extrajs %}
-    {% endblock %}
-  </body>
-</html>
+</body>

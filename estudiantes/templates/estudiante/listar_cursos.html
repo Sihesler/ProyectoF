@@ -1,0 +1,40 @@
+{% extends 'base/header.html' %}
+
+
+      {% block content %}
+
+      <h4> Registro de Cursos</h4>
+      <table class="table table-bordered">
+
+        <thead>
+
+          <tr>
+            <td> Materia </td>
+            <td> Profesor </td>
+            <td> Hora </td>
+            <td> Estudiantes </td>
+
+          </tr>
+        </thead>
+
+        <tbody>
+          {% if cursos %}
+          {% for curso in cursos %}
+          <tr>
+            <td> {{ curso.materia }} </td>
+            <td> {{ curso.profesor }} </td>
+            <td> {{ curso.hora }} </td>
+            <td> {{ curso.estudiantes|linebreaksbr }} </td>
+
+
+
+          </tr>
+          {% endfor %}
+
+          {% else %}
+          <h1> No hay regristros de cursos </h1>
+          {% endif %}
+        </tbody>
+      </table>
+
+      {% endblock %}
