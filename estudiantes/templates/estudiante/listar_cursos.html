@@ -6,6 +6,7 @@
       <h4> Registro de Cursos</h4>
       <table class="table table-bordered">
 
+
         <thead>
 
           <tr>
@@ -18,23 +19,22 @@
         </thead>
 
         <tbody>
-          {% if cursos %}
-          {% for curso in cursos %}
+
+          {% for cursos in curso %}
           <tr>
-            <td> {{ curso.materia }} </td>
-            <td> {{ curso.profesor }} </td>
-            <td> {{ curso.hora }} </td>
-            <td> {{ curso.estudiantes|linebreaksbr }} </td>
+            <td> {{ cursos.materia }} </td>
+            <td> {{ cursos.profesor }} </td>
+            <td> {{ cursos.hora }} </td>
+            <td> {{ cursos.estudiantes|linebreaksbr }} </td>
 
 
 
           </tr>
           {% endfor %}
 
-          {% else %}
-          <h1> No hay regristros de cursos </h1>
-          {% endif %}
+
         </tbody>
       </table>
+
 
       {% endblock %}

@@ -16,12 +16,12 @@
 
         <tbody>
 
-          {% for estudiante in post.estudiantes.all %}
+          {% for estudiantes in estudiante.all %}
           <tr>
-            <td> {{ estudiante.nombre }} </td>
-            <td> {{ estudiante.edad }} </td>
-            <td> {{ estudiante.fecha_nacimiento }} </td>
-            <td> {{ estudiante.direccion|linebreaksbr }} </td>
+            <td> {{ estudiantes.nombre }} </td>
+            <td> {{ estudiantes.edad }} </td>
+            <td> {{ estudiantes.fecha_nacimiento }} </td>
+            <td> {{ estudiantes.direccion }} </td>
           </tr>
           {% endfor %}
 
@@ -33,7 +33,10 @@
         <div class="container">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'curso_list' %}"> Crear </a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'estudiante_nuevo' %}"> Crear </a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'index' %}"> Regresar </a>
             </li>
           </ul>
         </nav>

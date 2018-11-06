@@ -25,7 +25,7 @@ SECRET_KEY = 'p=dbho=3dnyvrqfv%@1om$^#ti^bn#^z!h8=nft2$l=)w7stxh'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['siheslermateo.pythonanywhere.com','127.0.0.1']
 
 
 # Application definition
@@ -120,4 +120,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = (os.path.join(BASE_DIR, 'static'),)
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
